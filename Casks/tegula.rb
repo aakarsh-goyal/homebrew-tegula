@@ -8,14 +8,14 @@ cask "tegula" do
   homepage "https://github.com/aakarsh-goyal/tegula"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Tegula.app"
 
   # Ad-hoc signed, not notarized: clear the download quarantine flag so it launches.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Tegula.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/Tegula.app"],
+                          must_succeed: false
   end
 
   zap trash: [
