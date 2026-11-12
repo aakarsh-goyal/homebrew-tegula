@@ -1,6 +1,6 @@
 cask "tegula" do
-  version "1.1.1"
-  sha256 "5672dff7ac51b417365d1d90170a5d4a565251583499aa6e1e8e16d4e05bda1f"
+  version "1.1.2"
+  sha256 "ccb08e127dea93f4bc0d24a91fd611d769a9fe847131d44ebebbab2143df1694"
 
   url "https://github.com/aakarsh-goyal/tegula/releases/download/v#{version}/Tegula-#{version}-arm64.zip"
   name "Tegula"
